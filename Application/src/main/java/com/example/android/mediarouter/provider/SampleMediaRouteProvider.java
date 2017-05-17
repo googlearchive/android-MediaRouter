@@ -47,7 +47,8 @@ import java.util.ArrayList;
  * @see SampleMediaRouteProviderService
  */
 public final class SampleMediaRouteProvider extends MediaRouteProvider {
-    private static final String TAG = "SampleMediaRouteProvider";
+
+    private static final String TAG = "RouteProvider";
 
     private static final String FIXED_VOLUME_ROUTE_ID = "fixed";
     private static final String VARIABLE_VOLUME_BASIC_ROUTE_ID = "variable_basic";
@@ -127,18 +128,16 @@ public final class SampleMediaRouteProvider extends MediaRouteProvider {
         f6.addAction(MediaControlIntent.ACTION_GET_SESSION_STATUS);
         f6.addAction(MediaControlIntent.ACTION_END_SESSION);
 
-        CONTROL_FILTERS_BASIC = new ArrayList<IntentFilter>();
+        CONTROL_FILTERS_BASIC = new ArrayList<>();
         CONTROL_FILTERS_BASIC.add(f1);
         CONTROL_FILTERS_BASIC.add(f2);
         CONTROL_FILTERS_BASIC.add(f3);
 
-        CONTROL_FILTERS_QUEUING =
-                new ArrayList<IntentFilter>(CONTROL_FILTERS_BASIC);
+        CONTROL_FILTERS_QUEUING = new ArrayList<>(CONTROL_FILTERS_BASIC);
         CONTROL_FILTERS_QUEUING.add(f4);
         CONTROL_FILTERS_QUEUING.add(f5);
 
-        CONTROL_FILTERS_SESSION =
-                new ArrayList<IntentFilter>(CONTROL_FILTERS_QUEUING);
+        CONTROL_FILTERS_SESSION = new ArrayList<>(CONTROL_FILTERS_QUEUING);
         CONTROL_FILTERS_SESSION.add(f6);
     }
 

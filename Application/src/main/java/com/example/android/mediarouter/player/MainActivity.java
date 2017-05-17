@@ -223,7 +223,8 @@ public class MainActivity extends ActionBarActivity {
         DiscoveryFragment fragment =
                 (DiscoveryFragment) fm.findFragmentByTag(DISCOVERY_FRAGMENT_TAG);
         if (fragment == null) {
-            fragment = new DiscoveryFragment(mMediaRouterCB);
+            fragment = new DiscoveryFragment();
+            fragment.setCallback(mMediaRouterCB);
             fragment.setRouteSelector(mSelector);
             fm.beginTransaction().add(fragment, DISCOVERY_FRAGMENT_TAG).commit();
         } else {
@@ -606,10 +607,6 @@ public class MainActivity extends ActionBarActivity {
 
         public DiscoveryFragment() {
             mCallback = null;
-        }
-
-        public DiscoveryFragment(Callback cb) {
-            mCallback = cb;
         }
 
         public void setCallback(Callback cb) {
