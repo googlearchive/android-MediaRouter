@@ -31,7 +31,7 @@ import android.os.Handler;
 import android.os.SystemClock;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.MenuItemCompat;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.MediaRouteActionProvider;
 import android.support.v7.app.MediaRouteDiscoveryFragment;
 import android.support.v7.media.MediaControlIntent;
@@ -75,7 +75,7 @@ import java.io.File;
  * targets.
  * </p>
  */
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private static final String DISCOVERY_FRAGMENT_TAG = "DiscoveryFragment";
 
